@@ -1,4 +1,7 @@
+const ADMIN_WALLET_ADDRESS = process.env.ADMIN_WALLET_ADDRESS
+
 module.exports = [
     [],
+    ADMIN_WALLET_ADDRESS,
     "0xb5505a6d998549090530911180f38aC5130101c6"
 ];
