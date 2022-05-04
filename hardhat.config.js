@@ -9,6 +9,7 @@ const ETHSCAN_API_KEY = process.env.ETHSCAN_API_KEY
 const ROPSTEN_API_KEY = process.env.ROPSTEN_API_KEY
 const GOERLI_API_KEY = process.env.GOERLI_API_KEY
 const MUMBAI_API_KEY = process.env.MUMBAI_API_KEY
+const POLYGON_API_KEY = process.env.POLYGON_API_KEY
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -35,6 +36,10 @@ module.exports = {
     },
     mumbai: {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${MUMBAI_API_KEY}`,
+      accounts: [`${PRIVATE_KEY}`]
+    },
+    polygon_main: {
+      url: `https://polygon-mumbai.g.alchemy.com/v2/${POLYGON_API_KEY}`,
       accounts: [`${PRIVATE_KEY}`]
     }
   },

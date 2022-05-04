@@ -10,7 +10,7 @@ describe("Transfer operations", function () {
         TVEContract = await ethers.getContractFactory("AHAPolygon");
         [owner, addr1, addr2, addr3, ...addrs] = await ethers.getSigners();
 
-        deployedInstance = await TVEContract.deploy([addr1.address], addr1.address);
+        deployedInstance = await TVEContract.deploy([addr1.address], owner.address, addr1.address);
     })
 
     describe("whitelist", function () {

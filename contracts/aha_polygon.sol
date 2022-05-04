@@ -6,8 +6,8 @@ contract AHAPolygon is AHABase {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant DEPOSITOR_ROLE = keccak256("DEPOSITOR_ROLE");
 
-    constructor(address[] memory initialWhitelist, address childChainManager) AHABase(initialWhitelist)  {
-        _grantRole(MINTER_ROLE, msg.sender);
+    constructor(address[] memory initialWhitelist, address initAdminWallet, address childChainManager) AHABase(initialWhitelist, initAdminWallet)  {
+        _grantRole(MINTER_ROLE, initAdminWallet);
         _grantRole(DEPOSITOR_ROLE, childChainManager);
     }
 

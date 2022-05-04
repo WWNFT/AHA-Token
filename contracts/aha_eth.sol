@@ -6,7 +6,7 @@ import "./aha_base.sol";
 contract AHAEth is AHABase{
     bytes32 public constant PREDICATE_ROLE = keccak256("PREDICATE_ROLE");
 
-    constructor(address[] memory initialWhitelist, address mintableAssetProxy) AHABase(initialWhitelist) {
+    constructor(address[] memory initialWhitelist, address initAdminWallet, address mintableAssetProxy) AHABase(initialWhitelist, initAdminWallet) {
         _grantRole(PREDICATE_ROLE, mintableAssetProxy);
     }
 

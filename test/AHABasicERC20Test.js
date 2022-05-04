@@ -11,7 +11,7 @@ describe("Basic ERC operations", function () {
         TVEContract = await ethers.getContractFactory("AHAPolygon");
         [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
 
-        deployedInstance = await TVEContract.deploy([], addr1.address);
+        deployedInstance = await TVEContract.deploy([], owner.address, addr1.address);
     })
 
     // You can nest describe calls to create subsections.

@@ -10,7 +10,7 @@ describe("Polygon", function () {
         TVEContract = await ethers.getContractFactory("AHAPolygon");
         [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
 
-        deployedInstance = await TVEContract.deploy([], addr1.address);
+        deployedInstance = await TVEContract.deploy([], owner.address, addr1.address);
     })
 
     it("Only DEPOSITOR_ROLE can deposite", async function () {
@@ -47,7 +47,7 @@ describe("Eth", function () {
         TVEContract = await ethers.getContractFactory("AHAEth");
         [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
 
-        deployedInstance = await TVEContract.deploy([], addr1.address);
+        deployedInstance = await TVEContract.deploy([], owner.address, addr1.address);
     })
 
     it("Only PREDICATE_ROLE can mint", async function () {

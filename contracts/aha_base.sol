@@ -12,11 +12,11 @@ abstract contract AHABase is ERC20, AccessControl, ERC20Snapshot, Pausable, Tran
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant WHITELIST_EDITOR_ROLE = keccak256("WHITELIST_EDITOR_ROLE");
 
-    constructor(address[] memory initialWhitelist) ERC20("ArtistsHelpArtists", "AHA") TransferWhitelistable(initialWhitelist)  {
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _grantRole(SNAPSHOT_ROLE, msg.sender);
-        _grantRole(PAUSER_ROLE, msg.sender);
-        _grantRole(WHITELIST_EDITOR_ROLE, msg.sender);
+    constructor(address[] memory initialWhitelist, address initAdminWallet) ERC20("ArtistsHelpArtists", "AHA") TransferWhitelistable(initialWhitelist)  {
+        _grantRole(DEFAULT_ADMIN_ROLE, initAdminWallet);
+        _grantRole(SNAPSHOT_ROLE, initAdminWallet);
+        _grantRole(PAUSER_ROLE, initAdminWallet);
+        _grantRole(WHITELIST_EDITOR_ROLE, initAdminWallet);
     }
 
     function addTransferWhitelist(address dest) public onlyRole(WHITELIST_EDITOR_ROLE) {
