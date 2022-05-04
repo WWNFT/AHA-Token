@@ -39,7 +39,7 @@ module.exports = {
       accounts: [`${PRIVATE_KEY}`]
     },
     polygon_main: {
-      url: `https://polygon-mumbai.g.alchemy.com/v2/${POLYGON_API_KEY}`,
+      url: `https://polygon-mainnet.g.alchemy.com/v2/${POLYGON_API_KEY}`,
       accounts: [`${PRIVATE_KEY}`]
     }
   },
